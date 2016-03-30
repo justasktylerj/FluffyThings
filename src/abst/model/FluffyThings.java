@@ -2,9 +2,9 @@ package abst.model;
 
 public abstract class FluffyThings 
 {
-	private String group;
-	private String size;
-	private double goodnessScale;
+	public String group;
+	public String size;
+	public double goodnessScale;
 	
 	public String getGroup() 
 	{
@@ -30,5 +30,6 @@ public abstract class FluffyThings
 	{
 		this.goodnessScale = d;
 	}
+	
 	
 }

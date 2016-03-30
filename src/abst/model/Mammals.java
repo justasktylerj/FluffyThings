@@ -1,13 +1,20 @@
 package abst.model;
 
+import java.util.ArrayList;
+import javax.swing.*;
+
 public class Mammals extends FluffyThings 
 {
 	public Mammals()
 	{
 		super();
+		this.setSize("varies");
 		this.setGroup("Mammals");
-		this.setSize("All");
-		this.setGoodnessScale(7.2);
+		this.setGoodnessScale(7.0);
 	}
+	
+	
+	
+	
 	
 }
