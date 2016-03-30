@@ -4,7 +4,7 @@ public abstract class FluffyThings
 {
 	private String group;
 	private String size;
-	private Long goodnessScale;
+	private double goodnessScale;
 	
 	public String getGroup() 
 	{
@@ -22,13 +22,13 @@ public abstract class FluffyThings
 	{
 		this.size = size;
 	}
-	public Long getGoodnessScale() 
+	public double getGoodnessScale() 
 	{
 		return goodnessScale;
 	}
-	public void setGoodnessScale(Long goodnessScale) 
+	public void setGoodnessScale(double d) 
 	{
-		this.goodnessScale = goodnessScale;
+		this.goodnessScale = d;
 	}
 	
 }
