@@ -5,6 +5,11 @@ import abst.model.*;
 
 public class InhertitanceController 
 {
+	public InhertitanceController()
+	{
+		makeSillyList();
+	}
+	
 	private ArrayList <MovingThing> movingThings;
 	
 	public String MovingSpeed ()
@@ -19,7 +24,14 @@ public class InhertitanceController
 		}
 		return moving;
 	}
-	
+	public void start()
+	{
+		
+	}
+	 public String showSpeed()
+	 {
+		 
+	 }
 	private void makeMovingList()
 	{
 		movingThings.add(new Mammals());
