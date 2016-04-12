@@ -5,22 +5,25 @@ import abst.model.*;
 
 public class InhertitanceController 
 {
-	private ArrayList<FluffySilly> fluffySilly;
+	private ArrayList <MovingThing> movingThings;
 	
-	public String showFluffyLevels()
+	public String MovingSpeed ()
 	{
-		String FluffyLevels = "";
-		for(FluffySilly currentFluffy : fluffySilly)
+		String moving = "";
+		for (MovingThing current : movingThings)
 		{
-			fluffyLevels.concat("This is a " + currentFluffy.toString() + " and has a fluffiness level of " + currentFluffy.fluffinessLevel() + "\n");
+			if (current.isMoving() == true)
+			{
+				moving.concat(current.name(moving) + " is moving at a speed of" + current.speed() + "\n");
+			}
 		}
-		
-		return fluffylevels;
+		return moving;
 	}
 	
-	private void makeFluffyList()
+	private void makeMovingList()
 	{
-		fluffyThings.add(new Mammals());
-		fluffyThings.add(new ScareFluffy());
+		movingThings.add(new Mammals());
+		movingThings.add(new ScareFluffy());
+		movingThings.add(new Rabbits());
 	}
 }

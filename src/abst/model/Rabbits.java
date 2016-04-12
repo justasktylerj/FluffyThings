@@ -1,30 +1,30 @@
 package abst.model;
 
-import java.util.ArrayList;
-
 import javax.swing.*;
 
-public class Mammals extends FluffyThings 
+public class Rabbits extends FluffyThings
 {
-	public Mammals()
+
+	public Rabbits()
 	{
 		super();
-		this.setSize("Large");
-		this.setGroup("Large Mammals");
-		this.setGoodnessScale(5.0);
-		this.setIsCute(false);
+		
+		this.setGroup("Rabbits");
+		this.setSize("Small");
+		this.setGoodnessScale(10.0);
+		this.setIsCute(true);
 	}
 	
 	public String name(String name) 
 	{		
-		name = "Large Mammals";
+		name = "Rabbit";
 		
 		return name;
 	}
 
 	public int speed()
 	{		
-		return 50;
+		return 45;
 	}
 
 	public boolean isMoving() 
@@ -67,7 +67,6 @@ public class Mammals extends FluffyThings
 		
 		return comparedValue;
 	}
-	
-	
+
 	
 }

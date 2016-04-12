@@ -1,10 +1,12 @@
 package abst.model;
 
-public abstract class FluffyThings 
+public abstract class FluffyThings implements MovingThing, Comparable
 {
-	public String group;
-	public String size;
-	public double goodnessScale;
+	private String group;
+	private String size;
+	private double goodnessScale;
+	private boolean isCute;
+	
 	
 	public String getGroup() 
 	{
@@ -30,6 +32,42 @@ public abstract class FluffyThings
 	{
 		this.goodnessScale = d;
 	}
+	public boolean getIsCute() 
+	{
+		return isCute;
+	}
+	public void setIsCute(boolean isCute) 
+	{
+		this.isCute = isCute;
+	}
 	
+	public String toString()
+	{
+		String description = "This is a " + this.getClass().getName() + " and has a speed of: " + speed();
+		
+		return description;
+	}
 	
+	public int compareTo(Object compared)
+	{
+		int comparedValue = Integer.MIN_VALUE;
+		
+		if(compared instanceof MovingThing)
+		{
+			if(this.speed() > ((MovingThing) compared).speed())
+			{
+				comparedValue = 1;
+			}
+			else if(this.speed() < ((MovingThing) compared).speed())
+			{
+				comparedValue = -1;
+			}
+			else
+			{
+				comparedValue = 0;
+			}
+		}
+		
+		return comparedValue;
+	}
 }
