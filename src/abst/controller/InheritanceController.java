@@ -3,10 +3,11 @@ package abst.controller;
 import java.util.ArrayList;
 import abst.model.*;
 
-public class InhertitanceController 
+public class InheritanceController 
 {
-	public InhertitanceController()
+	public InheritanceController()
 	{
+		this.movingThings = new ArrayList<MovingThing>;
 		makeMovingList();
 	}
 	public String MovingSpeed ()
@@ -35,11 +36,6 @@ public class InhertitanceController
 		
 	}
 	
-	public void showSpeed()
-	{
-		 
-	}
-	
 	public void swap(int firstLocation, int secondLocation)
 	{
 		MovingThing temp = movingThings.get(firstLocation);
@@ -58,5 +54,34 @@ public class InhertitanceController
 				innerLoop--;
 			}
 		}
+	}
+	
+	public void quickSort()
+	{
+		if(low < high)
+		{
+			int midPoint = partition(low, high);
+			quickSort(low, midPoint-1);
+			quickSort(midPoint+1, high);
+		}
+	}
+	
+	
+	private int partition(int low, int high)
+	{
+		int partition = 0;
+		MovingThing pivot = movingThings.get(high);
+		int position = low;
+		for (int spot = low; spot < high - 1; spot++)
+		{
+			if (movingThings.get(spot).compareTo(pivot) <= 0)
+			{
+				swap (position, spot);
+				position++;
+			}
+		}
+		swap(position, high);
+		
+		return position;
 	}
 }
