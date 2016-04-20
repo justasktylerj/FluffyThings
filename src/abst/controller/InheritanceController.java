@@ -7,9 +7,11 @@ public class InheritanceController
 {
 	public InheritanceController()
 	{
-		this.movingThings = new ArrayList<MovingThing>;
-		makeMovingList();
+		this.movingThings = new ArrayList<MovingThing>();
 	}
+	
+	private ArrayList <MovingThing> movingThings;
+	
 	public String MovingSpeed ()
 	{
 		String moving = "";
@@ -22,7 +24,6 @@ public class InheritanceController
 		}
 		return moving;
 	}
-	private ArrayList <MovingThing> movingThings;
 	
 	private void makeMovingList()
 	{
@@ -56,7 +57,7 @@ public class InheritanceController
 		}
 	}
 	
-	public void quickSort()
+	public void quickSort(int low, int high)
 	{
 		if(low < high)
 		{

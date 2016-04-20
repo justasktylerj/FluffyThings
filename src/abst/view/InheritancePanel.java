@@ -12,7 +12,11 @@ private InheritanceController baseController;
 	private JButton sortButton;
 	private JTextArea textArea;
 	private SpringLayout baseLayout;
-	private 
+	
+	private void setupLayout()
+	{
+		
+	}
 	
 	private void setupListeners()
 	{
@@ -21,20 +25,14 @@ private InheritanceController baseController;
 			public void actionPerformed(ActionEvent click)
 			{
 				baseController.insertionSort();
-				textArea.setText(baseController.showSpeed());
+				textArea.setText(baseController.MovingSpeed());
 				
 				String temp = "the sorted contents are: \n";
-				for (MovingThing current : baseController.equals(getMovingThings())
+				for (MovingThing current : baseController.getMovingThings())
 				{
 					 temp += current.toString() + "\n";
 				}
 				textArea.setText(temp);
-			}
-			
-			@Override
-			public void actionPerformed(ActionEvent e)
-			{
-				
 			}
 		});
 	}
