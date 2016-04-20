@@ -2,7 +2,7 @@ package abst.controller;
 
 import java.util.ArrayList;
 import abst.model.*;
-
+import abst.view.*;
 public class InheritanceController 
 {
 	public InheritanceController()

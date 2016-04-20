@@ -8,11 +8,40 @@ import abst.model.MovingThing;
 
 public class InheritancePanel extends JPanel
 {
-private InheritanceController baseController;
+	private InheritanceController baseController;
 	private JButton sortButton;
 	private JTextArea textArea;
-	private SpringLayout baseLayout;
+	private JScrollPane textPane;
 	
+	public InheritancePanel (InheritanceController baseController)
+	{
+		this.baseController = baseController;
+		sortButton = new JButton("sort");
+		
+		setupPane();
+		setupPanel();
+		setupLayout();
+		setupListeners();
+	
+	}	
+	
+	private void setupPane()
+	{
+		textPane = new JScrollPane(textArea);
+		textPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+		textPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_AS_NEEDED);
+	}
+
+	private void setupPanel()
+	{	
+		this.setLayout(baseLayout);
+		textArea = new JTextArea();
+		this.add(textArea);
+		textArea.setText(baseController.MovingSpeed());
+		this.add(sortButton);
+		this.setBackground
+	}
+
 	private void setupLayout()
 	{
 		
@@ -26,14 +55,15 @@ private InheritanceController baseController;
 			{
 				baseController.insertionSort();
 				textArea.setText(baseController.MovingSpeed());
-				
+			
 				String temp = "the sorted contents are: \n";
 				for (MovingThing current : baseController.getMovingThings())
 				{
-					 temp += current.toString() + "\n";
+				 	temp += current.toString() + "\n";
 				}
 				textArea.setText(temp);
 			}
 		});
 	}
 }
+
